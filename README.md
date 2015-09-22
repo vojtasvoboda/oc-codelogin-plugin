@@ -47,11 +47,13 @@ Set redirect parameter to your secret page and then set if you want to use input
     <img src="assets/images/4-create-your-own-design.png" alt="Screenshot of custom designs">
 </p>
 
+4) At RainLab.User plugin create as many users as you want. It's recommanded to use unique password for each user, because first user with matched password will be log!
+
 ## Events
 
 List of events provided by plugin:
 
-- _vojtasvoboda.codelogin.afterlogin_ - event fired after successfull login. Inject $user parameter with successfully logged user instance.
+- _vojtasvoboda.codelogin.afterlogin_ - event fired after successfull login. `$user` parameter is injected and contain instance of successfully logged user.
 
 ## Troubleshooting
 
