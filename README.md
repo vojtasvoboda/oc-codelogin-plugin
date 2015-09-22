@@ -1,14 +1,22 @@
 # Code Login for OctoberCMS
 
-Front-end users login form - only by code/password.
+Login only by code or password. Create secret page or protect whole site just in minute.
 
 ## Dependencies
 
-RainLab.User plugin.
+RainLab.User plugin for users management.
 
-## Installation
+## How to create secret page
 
-On frontend we need to inject {% framework extras %} to layout and be sure to have jQuery included:
+1) Insert RainLab.User Session component to layout which you want to protect by code.
+
+<p>
+    <img src="assets/images/1-place-session-component.png" alt="Screenshot of Session component placed at layout">
+</p>
+
+Set Allow property only for Users (means logged users) and then set your login page. All guests will be redirect to login page.
+
+Be sure you injected JavaScript code and jQuery to your layout:
 
 ```
 <script src="{{ 'assets/javascript/site.vendor.js' | theme }}"></script>
@@ -17,4 +25,40 @@ On frontend we need to inject {% framework extras %} to layout and be sure to ha
 {% framework extras %}
 ```
 
-If form doesn't work, try to insert component to page, not to partial.
+2) Create login page and insert RainLab.User Session component and Code login form. In my example Login page uses Login layout. Session component set to allow all users (login allowed for everyone).
+
+<p>
+    <img src="assets/images/2-create-login-page.png" alt="Screenshot of Login page with Session and Code login form">
+</p>
+
+Set redirect parameter to your secret page and then set if you want to use input type text or input type password (code will not be visible).
+
+<p>
+    <img src="assets/images/3-password-visible-or-not.png" alt="Screenshot of Login form with visible password">
+</p>
+
+3) Use default HTML or create own design by extending component template:
+
+- create file `/partials/codeLogin/default.htm`
+- copy content from original component template `/components/codelogin/default.htm`
+- add classes or HTML you needed
+
+<p>
+    <img src="assets/images/4-create-your-own-design.png" alt="Screenshot of custom designs">
+</p>
+
+## Events
+
+List of events provided by plugin:
+
+- _vojtasvoboda.codelogin.afterlogin_ - event fired after successfull login. Inject $user parameter with successfully logged user instance.
+
+## Troubleshooting
+
+### Login button doesn't works.
+
+Be sure you have included jQuery and `{% framework extras %}` code to your layout.
+
+### AJAX handler 'codeLogin::onCodesignin' was not found.
+
+If form doesn't work, try to insert Code login component to page, not to partial. Login component should be placed beside to Session component.
