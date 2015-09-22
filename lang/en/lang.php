@@ -7,12 +7,22 @@ return [
     ],
     'logincomponent' => [
         'name' => 'Code login',
-        'login_form' => 'Insert code/password login form',
-        'redirect_to' => 'Redirect to',
-        'redirect_to_desc' => 'Page name to redirect to after update, sign in or registration.',
+        'description' => 'Insert code/password login form',
+        'redirect' => [
+            'title' => 'Redirect to',
+            'description' => 'Page name to redirect to after update, sign in or registration.',
+        ],
+        'visible' => [
+            'title' => 'Code/password visible',
+            'description' => 'When checked, inserted password will be visible (input type text used).'
+        ],
+        'button' => [
+            'title' => 'Button label',
+            'description' => 'String which will be shown at login button.'
+        ]
     ],
     'form' => [
 	    'wrong_code' => 'Wrong code!',
-	    'required' => 'The :attribute field is required.',
+	    'required' => 'The :attribute field is required.'
     ],
 ];

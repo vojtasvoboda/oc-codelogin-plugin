@@ -20,7 +20,7 @@ class CodeLogin extends ComponentBase
 	{
 		return [
 			'name'        => 'vojtasvoboda.codelogin::lang.logincomponent.name',
-			'description' => 'vojtasvoboda.codelogin::lang.logincomponent.login_form'
+			'description' => 'vojtasvoboda.codelogin::lang.logincomponent.description'
 		];
 	}
 
@@ -28,17 +28,34 @@ class CodeLogin extends ComponentBase
 	{
 		return [
 			'redirect' => [
-				'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.redirect_to',
-				'description' => 'vojtasvoboda.codelogin::lang.logincomponent.redirect_to_desc',
+				'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.redirect.title',
+				'description' => 'vojtasvoboda.codelogin::lang.logincomponent.redirect.description',
 				'type'        => 'dropdown',
 				'default'     => ''
-			]
+			],
+            'visible' => [
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.visible.title',
+                'description' => 'vojtasvoboda.codelogin::lang.logincomponent.visible.description',
+                'type'        => 'checkbox',
+                'default'     => false
+            ],
+            'button' => [
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.button.title',
+                'description' => 'vojtasvoboda.codelogin::lang.logincomponent.button.description',
+                'type'        => 'string',
+                'default'     => 'enter'
+            ]
 		];
 	}
 
 	public function getRedirectOptions()
 	{
-		return [''=>'- none -'] + Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+        $default = [
+            '' => '- none -'
+        ];
+        $pages = Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+
+		return $default + $pages;
 	}
 
 	/**
@@ -46,19 +63,8 @@ class CodeLogin extends ComponentBase
 	 */
 	public function onRun()
 	{
-		$this->page['user'] = $this->user();
-	}
-
-	/**
-	 * Returns the logged in user, if available
-	 */
-	public function user()
-	{
-		if (!Auth::check()) {
-			return null;
-		}
-
-		return Auth::getUser();
+		$this->page['visible'] = $this->property('visible');
+        $this->page['button'] = $this->property('button');
 	}
 
 	/**
