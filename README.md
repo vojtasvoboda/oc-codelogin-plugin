@@ -8,6 +8,8 @@ RainLab.User plugin for users management.
 
 ## How to create secret page
 
+0) Install [VojtaSvoboda.CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin.
+
 1) Insert RainLab.User Session component to layout which you want to protect by code.
 
 <p>
