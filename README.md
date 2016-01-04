@@ -66,3 +66,13 @@ Be sure you have included jQuery and `{% framework extras %}` code to your layou
 ### AJAX handler 'codeLogin::onCodesignin' was not found.
 
 If form doesn't work, try to insert Code login component to page, not to partial. Login component should be placed beside to Session component.
+
+## License
+
+Access log plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
+
+## Contributing
+
+**Feel free to send pullrequest!**
+
+Please send Pull Request to master branch.
