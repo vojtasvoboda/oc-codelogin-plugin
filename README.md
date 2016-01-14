@@ -27,7 +27,9 @@ Be sure you injected JavaScript code and jQuery to your layout:
 {% framework extras %}
 ```
 
-2) Create login page and insert RainLab.User Session component and Code login form. In my example Login page uses Login layout. Session component set to allow all users (login allowed for everyone).
+2) Create login page with Login layout and insert RainLab.User Session component and Code login form. 
+Session component set to Allow only guest (login allowed only for guests). 
+CodeLogin provide login form and session component will redirect user when already logged.
 
 <p>
     <img src="assets/images/2-create-login-page.png" alt="Screenshot of Login page with Session and Code login form">
@@ -51,6 +53,10 @@ Set redirect parameter to your secret page and then set if you want to use input
 
 4) At RainLab.User plugin create as many users as you want. It's recommanded to use unique password for each user, because first user with matched password will be log!
 
+5) [optional] If you want create logout page, just create logout.htm, insert session component allowed for logged user and with redirect to login page. To the template paste this code:
+
+`<a data-request="onLogout" class="btn" data-request-data="redirect: '/login'">Sign out</a>`
+
 ## Events
 
 List of events provided by plugin:
@@ -61,7 +67,7 @@ List of events provided by plugin:
 
 ### Login button doesn't works.
 
-Be sure you have included jQuery and `{% framework extras %}` code to your layout.
+Be sure you have included jQuery and `{% framework extras %}` code to your layout (not to page).
 
 ### AJAX handler 'codeLogin::onCodesignin' was not found.
 
