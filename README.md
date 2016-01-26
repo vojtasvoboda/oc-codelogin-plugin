@@ -57,6 +57,10 @@ Set redirect parameter to your secret page and then set if you want to use input
 
 `<a data-request="onLogout" class="btn" data-request-data="redirect: '/login'">Sign out</a>`
 
+6) [optional] For logging all user accesses use [UserAccessLog](http://octobercms.com/plugin/vojtasvoboda-useraccesslog) plugin.
+
+7) [optional] For creating more user accounts use [User import/export](http://octobercms.com/plugin/vojtasvoboda-userimportexport) plugin - just create simple XLS file with usernames and import it.
+
 ## Events
 
 List of events provided by plugin:
