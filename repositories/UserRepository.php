@@ -23,7 +23,7 @@ class UserRepository
 	 *
 	 * @param $password
 	 *
-	 * @return null
+	 * @return User|null
 	 */
 	public function getUserByPassword($password)
 	{

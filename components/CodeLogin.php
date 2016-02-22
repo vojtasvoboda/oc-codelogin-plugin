@@ -79,6 +79,8 @@ class CodeLogin extends ComponentBase
 
 		$rules = [];
 		$rules['code'] = 'required|min:2';
+
+		$messages = [];
 		$messages['required'] = trans('vojtasvoboda.codelogin::lang.form.required');
 
 		$validation = Validator::make($data, $rules, $messages);
