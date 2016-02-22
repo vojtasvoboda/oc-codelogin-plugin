@@ -1,5 +1,9 @@
 # Code Login for OctoberCMS
 
+[![Codacy](https://img.shields.io/codacy/daf6a9ebd03540aeb3af7ff1c4dff8ce.svg)](https://www.codacy.com/app/vojtasvoboda/oc-codelogin-plugin)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-codelogin-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-codelogin-plugin/?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-codelogin-plugin/blob/master/LICENSE.md)
+
 Login only by code or password. Create secret page or protect whole site just in minute.
 
 ## Dependencies
