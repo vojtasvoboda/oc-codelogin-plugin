@@ -108,7 +108,8 @@ class CodeLogin extends ComponentBase
         ], $remember);
 
         /*
-         * After login event
+         * Event just for backward compatibility. It's more then recommand use
+         * standard rainlab.user.login event - see readme.
          */
         Event::fire('vojtasvoboda.codelogin.afterlogin', [$user]);
 

@@ -20,10 +20,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-	        'name'        => 'vojtasvoboda.codelogin::lang.plugin.name',
+	        'name' => 'vojtasvoboda.codelogin::lang.plugin.name',
 	        'description' => 'vojtasvoboda.codelogin::lang.plugin.description',
-	        'author'      => 'Vojta Svoboda',
-	        'icon'        => 'icon-user',
+	        'author' => 'Vojta Svoboda',
+	        'icon' => 'icon-user',
         ];
     }
 

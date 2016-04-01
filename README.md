@@ -67,9 +67,13 @@ Set redirect parameter to your secret page and then set if you want to use input
 
 ## Events
 
-List of events provided by plugin:
+After successfull login you can use `rainlab.user.login` event to catch logged user instance:
 
-- _vojtasvoboda.codelogin.afterlogin_ - event fired after successfull login. `$user` parameter is injected and contain instance of successfully logged user.
+```
+Event::listen('rainlab.user.login', function ($user) {
+    dump($user);
+});
+```
 
 ## Troubleshooting
 
