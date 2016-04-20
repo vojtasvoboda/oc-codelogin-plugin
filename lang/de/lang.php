@@ -10,8 +10,7 @@ return [
         'description' => 'Kennwort Schutz Anmelde-Formular hinzufügen',
         'redirect' => [
             'title' => 'Umleiten nach',
-            'description' => 'Seitenname für die Umleitung nach dem Update, Anmeldung oder Registration.',
-                            
+            'description' => 'Seitenname für die Umleitung nach dem Update, Anmeldung oder Registration.'                   
         ],
         'visible' => [
             'title' => 'Kennwort sichtbar',
