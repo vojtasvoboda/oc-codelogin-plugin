@@ -1,2 +1,3 @@
 1.0.1: First version of CodeLogin
 1.0.2: Update readme, add composer.json
+1.0.3: Add de_DE locale (thanks to Marc Wensauer)
