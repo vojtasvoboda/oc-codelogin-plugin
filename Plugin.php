@@ -3,7 +3,7 @@
 use System\Classes\PluginBase;
 
 /**
- * QuickLogin Plugin Information File
+ * CodeLogin Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -33,5 +33,4 @@ class Plugin extends PluginBase
 			'VojtaSvoboda\CodeLogin\Components\CodeLogin' => 'codeLogin',
 		];
 	}
-
 }

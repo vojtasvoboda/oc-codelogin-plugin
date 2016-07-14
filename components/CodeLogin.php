@@ -1,6 +1,4 @@
-<?php
-
-namespace VojtaSvoboda\CodeLogin\Components;
+<?php namespace VojtaSvoboda\CodeLogin\Components;
 
 use Auth;
 use Event;
@@ -122,5 +120,4 @@ class CodeLogin extends ComponentBase
             return Redirect::intended($redirectUrl);
         }
     }
-
 }

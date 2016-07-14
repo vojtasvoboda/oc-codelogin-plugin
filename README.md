@@ -4,7 +4,7 @@
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-codelogin-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-codelogin-plugin/?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-codelogin-plugin/blob/master/LICENSE.md)
 
-Login only by code or password. Create secret page or protect whole site just in minute.
+Login only by code or password. Create secret page or protect whole site just in minute. Tested with the latest stable OctoberCMS build 349.
 
 ## Dependencies
 
@@ -12,7 +12,7 @@ RainLab.User plugin for users management.
 
 ## How to create secret page
 
-0) Install [VojtaSvoboda.CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin.
+0) Install RainLab.User plugin and then [VojtaSvoboda.CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin.
 
 1) Insert RainLab.User Session component to layout which you want to protect by code.
 
@@ -85,12 +85,18 @@ Be sure you have included jQuery and `{% framework extras %}` code to your layou
 
 If form doesn't work, try to insert Code login component to page, not to partial. Login component should be placed beside to Session component.
 
-## License
-
-Access log plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
-
-## Contributing
+## Future plans
 
 **Feel free to send pullrequest!**
+
+- [ ] can change login form input field text
+- [ ] code preset with GET parameter e.g. /login?code=abcde
+- [ ] unit test for logging method
+
+## License
+
+Code login plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
+
+## Contributing
 
 Please send Pull Request to master branch.

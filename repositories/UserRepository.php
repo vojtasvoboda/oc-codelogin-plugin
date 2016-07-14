@@ -1,6 +1,4 @@
-<?php
-
-namespace VojtaSvoboda\CodeLogin\Repositories;
+<?php namespace VojtaSvoboda\CodeLogin\Repositories;
 
 use Auth;
 use October\Rain\Auth\AuthException;
@@ -45,5 +43,4 @@ class UserRepository
 
 		return null;
 	}
-
 }
