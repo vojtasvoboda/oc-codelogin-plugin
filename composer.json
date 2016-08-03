@@ -1,6 +1,9 @@
 {
     "name": "vojtasvoboda/oc-codelogin-plugin",
     "type": "october-plugin",
+    "extra": {
+        "installer-name": "codelogin"
+    },
     "description": "Code login plugin for OctoberCMS",
     "homepage": "https://github.com/vojtasvoboda/oc-codelogin-plugin",
     "keywords": ["october", "plugin", "code", "login", "user"],
