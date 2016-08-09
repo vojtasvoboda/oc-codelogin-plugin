@@ -22,14 +22,18 @@ RainLab.User plugin for users management.
 
 Set Allow property only for Users (means logged users) and then set your login page. All guests will be redirect to login page.
 
-Be sure you injected JavaScript code and jQuery to your layout:
+Be sure you have injected JavaScript code and jQuery to your layout:
 
 ```
-<script src="{{ 'assets/javascript/site.vendor.js' | theme }}"></script>
-<script src="{{ 'assets/javascript/site.js' | theme }}"></script>
-{% scripts %}
+<script src="{{ [
+    'assets/javascript/jquery.js',
+]|theme }}"></script>
+
+{% framework %}
 {% framework extras %}
 ```
+
+Framework extras tag is optional and this tag adds a CSS and JavaScript files that contain the loading indicator plugin and CSS classes for styling the loading indicator. The indicator is displayed on the top of the page when an AJAX request runs.
 
 2) Create login page with Login layout and insert RainLab.User Session component and Code login form. 
 Session component set to Allow only guest (login allowed only for guests). 
