@@ -7,10 +7,10 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
-	/**
-	 * @var array Plugin dependencies
-	 */
-	public $require = ['RainLab.User'];
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['RainLab.User'];
 
     /**
      * Returns information about this plugin.
@@ -20,17 +20,18 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-	        'name' => 'vojtasvoboda.codelogin::lang.plugin.name',
-	        'description' => 'vojtasvoboda.codelogin::lang.plugin.description',
-	        'author' => 'Vojta Svoboda',
-	        'icon' => 'icon-user',
+            'name'        => 'vojtasvoboda.codelogin::lang.plugin.name',
+            'description' => 'vojtasvoboda.codelogin::lang.plugin.description',
+            'author'      => 'Vojta Svoboda',
+            'icon'        => 'icon-user',
+            'homepage'    => 'https://github.com/vojtasvoboda/oc-codelogin-plugin'
         ];
     }
 
-	public function registerComponents()
-	{
-		return [
-			'VojtaSvoboda\CodeLogin\Components\CodeLogin' => 'codeLogin',
-		];
-	}
+    public function registerComponents()
+    {
+        return [
+            'VojtaSvoboda\CodeLogin\Components\CodeLogin' => 'codeLogin'
+        ];
+    }
 }
