@@ -24,14 +24,14 @@ class Plugin extends PluginBase
             'description' => 'vojtasvoboda.codelogin::lang.plugin.description',
             'author'      => 'Vojta Svoboda',
             'icon'        => 'icon-user',
-            'homepage'    => 'https://github.com/vojtasvoboda/oc-codelogin-plugin'
+            'homepage'    => 'https://github.com/vojtasvoboda/oc-codelogin-plugin',
         ];
     }
 
     public function registerComponents()
     {
         return [
-            'VojtaSvoboda\CodeLogin\Components\CodeLogin' => 'codeLogin'
+            'VojtaSvoboda\CodeLogin\Components\CodeLogin' => 'codeLogin',
         ];
     }
 }
