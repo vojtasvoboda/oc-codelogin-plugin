@@ -1,6 +1,6 @@
 <div class="form form-code-login">
 
-    {{ form_open({ name: 'formLogin', request: __SELF__ ~ '::onCodesignin' }) }}
+    {{ form_ajax(__SELF__ ~ '::onCodesignin', {name: __SELF__}) }}
 
         <div class="form-group">
             <input type="{{ visible ? 'text' : 'password' }}"
