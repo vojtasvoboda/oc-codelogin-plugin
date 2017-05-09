@@ -2,3 +2,4 @@
 1.0.2: Update readme, add composer.json
 1.0.3: Add de_DE locale (thanks to Marc Wensauer)
 1.0.4: Add CSRF protection for login form
+1.0.5: Flash message support added to onCodesignin

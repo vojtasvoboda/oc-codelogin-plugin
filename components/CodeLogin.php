@@ -2,9 +2,11 @@
 
 use Auth;
 use Event;
+use Exception;
 use Flash;
 use Input;
 use Redirect;
+use Request;
 use Validator;
 use ValidationException;
 use ApplicationException;
@@ -69,6 +71,19 @@ class CodeLogin extends ComponentBase
      * Sign in the user
      */
     public function onCodesignin()
+    {
+        try {
+            return $this->doSignin();
+
+        } catch (Exception $ex) {
+            if (Request::ajax()) {
+                throw $ex;
+            }
+            Flash::error($ex->getMessage());
+        }
+    }
+
+    private function doSignin()
     {
         /*
          * Validate input
