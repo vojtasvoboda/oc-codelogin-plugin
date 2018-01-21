@@ -91,11 +91,11 @@ If form doesn't work, try to insert Code login component to page, not to partial
 
 ## Future plans
 
-**Feel free to send pullrequest!**
-
 - [ ] can change login form input field text
 - [ ] code preset with GET parameter e.g. /login?code=abcde
 - [ ] unit test for logging method
+
+**Feel free to send pullrequest!**
 
 ## License
 
