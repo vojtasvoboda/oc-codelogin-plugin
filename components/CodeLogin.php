@@ -107,7 +107,7 @@ class CodeLogin extends ComponentBase
         $users = new UserRepository();
         $userToLog = $users->getUserByPassword(array_get($data, 'code'));
         if ($userToLog === null) {
-            $exception = new ValidationException([trans('vojtasvoboda.codelogin::lang.form.wrong_code')]);
+            $exception = new ValidationException([ 'code' => trans('vojtasvoboda.codelogin::lang.form.wrong_code') ]);
             throw $exception;
         }
 
