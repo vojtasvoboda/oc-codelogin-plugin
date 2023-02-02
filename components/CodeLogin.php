@@ -44,6 +44,12 @@ class CodeLogin extends ComponentBase
                 'description' => 'vojtasvoboda.codelogin::lang.logincomponent.button.description',
                 'type'        => 'string',
                 'default'     => 'enter'
+            ],
+            'group' => [
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.group.title',
+                'description' => 'vojtasvoboda.codelogin::lang.logincomponent.group.description',
+                'type'        => 'dropdown',
+                'default'     => null
             ]
         ];
     }
@@ -56,6 +62,14 @@ class CodeLogin extends ComponentBase
         $pages = Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
 
         return $default + $pages;
+    }
+
+    public function getGroupOptions()
+    {
+        $groups = (new UserRepository())->getAllGroups(['id', 'name']);
+        return [
+                '' => '- none -'
+            ] + $groups->pluck('name', 'id')->toArray();
     }
 
     /**
@@ -105,7 +119,7 @@ class CodeLogin extends ComponentBase
          * Find user by password
          */
         $users = new UserRepository();
-        $userToLog = $users->getUserByPassword(array_get($data, 'code'));
+        $userToLog = $users->getUserByPassword(array_get($data, 'code'), $this->property('group', null));
         if ($userToLog === null) {
             $exception = new ValidationException([ 'code' => trans('vojtasvoboda.codelogin::lang.form.wrong_code') ]);
             throw $exception;
