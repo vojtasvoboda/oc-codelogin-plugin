@@ -16,7 +16,7 @@ class UserRepository
      */
     public function getUserByPassword($password, $groupId = null)
     {
-        $users = $groupId ? $this->getAllUsersOfGroup($groupId) : $this->getAllUsers();
+        $users = !empty($groupId) ? $this->getAllUsersOfGroup($groupId) : $this->getAllUsers();
 
         foreach ($users as $user) {
 
@@ -42,9 +42,11 @@ class UserRepository
      *
      * @return mixed
      */
-    public function getAllUsers()
+    public function getAllUsersOfGroup($groupId)
     {
-        return User::where('is_activated', true)->get();
+        return User::whereHas('groups', function ($groupQuery) use ($groupId) {
+            return $groupQuery->where('id', '=', $groupId);
+        })->where('is_activated', true)->get();
     }
 
     /**
@@ -52,11 +54,9 @@ class UserRepository
      *
      * @return mixed
      */
-    public function getAllUsersOfGroup($groupId)
+    public function getAllUsers()
     {
-        return User::whereHas('groups', function ($groupQuery) use ($groupId) {
-            return $groupQuery->where('id', '=', $groupId);
-        })->where('is_activated', true)->get();
+        return User::where('is_activated', true)->get();
     }
 
     public function getAllGroups($columns = ['*'])

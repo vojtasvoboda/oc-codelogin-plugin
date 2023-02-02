@@ -68,7 +68,9 @@ class CodeLogin extends ComponentBase
     public function getGroupOptions()
     {
         $groups = (new UserRepository())->getAllGroups(['id', 'name']);
-        return $groups->pluck('name', 'id')->toArray();
+        return [
+                '' => '- none -'
+            ] + $groups->pluck('name', 'id')->toArray();
     }
 
     /**
