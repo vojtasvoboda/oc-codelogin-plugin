@@ -1,26 +1,25 @@
 <?php namespace VojtaSvoboda\CodeLogin\Components;
 
-use ApplicationException;
 use Auth;
-use Cms\Classes\ComponentBase;
-use Cms\Classes\Page;
 use Event;
 use Exception;
 use Flash;
 use Input;
 use Redirect;
 use Request;
-use ValidationException;
 use Validator;
+use ValidationException;
+use ApplicationException;
+use Cms\Classes\Page;
+use Cms\Classes\ComponentBase;
 use VojtaSvoboda\CodeLogin\Repositories\UserRepository;
 
 class CodeLogin extends ComponentBase
 {
-
     public function componentDetails()
     {
         return [
-            'name' => 'vojtasvoboda.codelogin::lang.logincomponent.name',
+            'name'        => 'vojtasvoboda.codelogin::lang.logincomponent.name',
             'description' => 'vojtasvoboda.codelogin::lang.logincomponent.description'
         ];
     }
@@ -29,28 +28,28 @@ class CodeLogin extends ComponentBase
     {
         return [
             'redirect' => [
-                'title' => 'vojtasvoboda.codelogin::lang.logincomponent.redirect.title',
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.redirect.title',
                 'description' => 'vojtasvoboda.codelogin::lang.logincomponent.redirect.description',
-                'type' => 'dropdown',
-                'default' => ''
+                'type'        => 'dropdown',
+                'default'     => ''
             ],
             'visible' => [
-                'title' => 'vojtasvoboda.codelogin::lang.logincomponent.visible.title',
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.visible.title',
                 'description' => 'vojtasvoboda.codelogin::lang.logincomponent.visible.description',
-                'type' => 'checkbox',
-                'default' => false
+                'type'        => 'checkbox',
+                'default'     => false
             ],
             'button' => [
-                'title' => 'vojtasvoboda.codelogin::lang.logincomponent.button.title',
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.button.title',
                 'description' => 'vojtasvoboda.codelogin::lang.logincomponent.button.description',
-                'type' => 'string',
-                'default' => 'enter'
+                'type'        => 'string',
+                'default'     => 'enter'
             ],
             'group' => [
-                'title' => 'vojtasvoboda.codelogin::lang.logincomponent.group.title',
+                'title'       => 'vojtasvoboda.codelogin::lang.logincomponent.group.title',
                 'description' => 'vojtasvoboda.codelogin::lang.logincomponent.group.description',
-                'type' => 'dropdown',
-                'default' => null
+                'type'        => 'dropdown',
+                'default'     => null
             ]
         ];
     }
@@ -122,7 +121,7 @@ class CodeLogin extends ComponentBase
         $users = new UserRepository();
         $userToLog = $users->getUserByPassword(array_get($data, 'code'), $this->property('group', null));
         if ($userToLog === null) {
-            $exception = new ValidationException(['code' => trans('vojtasvoboda.codelogin::lang.form.wrong_code')]);
+            $exception = new ValidationException([ 'code' => trans('vojtasvoboda.codelogin::lang.form.wrong_code') ]);
             throw $exception;
         }
 
