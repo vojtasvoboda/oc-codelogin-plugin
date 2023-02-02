@@ -19,6 +19,10 @@ return [
         'button' => [
             'title' => 'Button label',
             'description' => 'String which will be shown at login button.'
+        ],
+        'group' => [
+            'title' => 'Group',
+            'description' => 'You may select a group, in which the component should look for the user.'
         ]
     ],
     'form' => [

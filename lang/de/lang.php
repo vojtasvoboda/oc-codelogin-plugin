@@ -10,7 +10,7 @@ return [
         'description' => 'Kennwort Schutz Anmelde-Formular hinzufügen',
         'redirect' => [
             'title' => 'Umleiten nach',
-            'description' => 'Seitenname für die Umleitung nach dem Update, Anmeldung oder Registration.'                   
+            'description' => 'Seitenname für die Umleitung nach dem Update, Anmeldung oder Registration.'
         ],
         'visible' => [
             'title' => 'Kennwort sichtbar',
@@ -19,6 +19,10 @@ return [
         'button' => [
             'title' => 'Button Titel',
             'description' => 'Anmelde Button Text.'
+        ],
+        'group' => [
+            'title' => 'Gruppe',
+            'description' => 'Sie können hier eine Gruppe wählen, in der nach dem Benutzer gesucht werden soll.'
         ]
     ],
     'form' => [
